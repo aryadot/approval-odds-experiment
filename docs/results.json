@@ -1,0 +1,133 @@
+{
+  "primary": [
+    {
+      "index": "funded_per_user",
+      "control": 0.1566,
+      "treatment": 0.1603,
+      "rel_lift": 0.0233,
+      "rel_ci_low": 0.0009,
+      "rel_ci_high": 0.0463,
+      "p_value": 0.0414,
+      "true_lift": 0.0345,
+      "ci_contains_truth": true
+    },
+    {
+      "index": "revenue_per_lead",
+      "control": 28.7394,
+      "treatment": 29.2499,
+      "rel_lift": 0.0178,
+      "rel_ci_low": -0.0065,
+      "rel_ci_high": 0.0426,
+      "p_value": 0.152,
+      "true_lift": 0.031,
+      "ci_contains_truth": true
+    }
+  ],
+  "diagnostics": [
+    {
+      "index": "ctr",
+      "control": 0.15136400936693153,
+      "treatment": 0.14001438935187963,
+      "rel_lift": -0.074982289796107,
+      "rel_ci_low": -0.0840156003555077,
+      "rel_ci_high": -0.06585989398624326,
+      "p_value": 1.0342812880208947e-54,
+      "se": 0.0007285877950646608,
+      "naive_se": 0.0007055060509393972,
+      "se_ratio": 1.0327165785389505
+    },
+    {
+      "index": "click_to_funded",
+      "control": 0.20693941237140667,
+      "treatment": 0.2289356114132374,
+      "rel_lift": 0.10629294241134124,
+      "rel_ci_low": 0.08459220873951101,
+      "rel_ci_high": 0.1284278686194087,
+      "p_value": 1.6981727796631095e-23,
+      "se": 0.002201981279992337,
+      "naive_se": 0.002165581359818935,
+      "se_ratio": 1.0168083826582464
+    }
+  ],
+  "guardrails": [
+    {
+      "index": "approval_rate_change",
+      "value": "0.04115640642691476",
+      "threshold": "CI low > -0.010",
+      "passes": "True"
+    },
+    {
+      "index": "max_partner_share_move",
+      "value": "0.008455907264459994",
+      "threshold": "<= 0.020",
+      "passes": "True"
+    },
+    {
+      "index": "top2_share_change",
+      "value": "0.016292464537891016",
+      "threshold": "<= 0.030",
+      "passes": "True"
+    }
+  ],
+  "cuped": [
+    {
+      "index": "funded",
+      "theta": 0.022940920231242667,
+      "raw_rel_lift": 0.02334056440406629,
+      "raw_se": 0.0017921748059426625,
+      "raw_p": 0.041379967465805405,
+      "cuped_rel_lift": 0.02295336484021182,
+      "cuped_se": 0.0017856853850669778,
+      "cuped_p": 0.044057767969385035,
+      "variance_reduction": 0.0072288393269969164
+    },
+    {
+      "index": "revenue",
+      "theta": 4.233468038217361,
+      "raw_rel_lift": 0.017764030111264484,
+      "raw_se": 0.35640893387493866,
+      "raw_p": 0.15202318715308133,
+      "cuped_rel_lift": 0.017375720417533547,
+      "cuped_se": 0.3552979748075149,
+      "cuped_p": 0.15979491293836623,
+      "variance_reduction": 0.006224465672779789
+    }
+  ],
+  "peeking": {
+    "fpr_end": 0.046,
+    "fpr_any": 0.298
+  },
+  "segments": [
+    {
+      "index": "marketplace",
+      "users": 109983.0,
+      "control": 0.1504774029280713,
+      "treatment": 0.14933270300738208,
+      "rel_lift": -0.007607121723361976,
+      "rel_ci_low": -0.03767100139748292,
+      "rel_ci_high": 0.023395976100032856,
+      "p_value": 0.6265892358428342
+    },
+    {
+      "index": "partner_channel",
+      "users": 59973.0,
+      "control": 0.15838177323444913,
+      "treatment": 0.16282166516861413,
+      "rel_lift": 0.028032846479075113,
+      "rel_ci_low": -0.012553399983655122,
+      "rel_ci_high": 0.07028727773469057,
+      "p_value": 0.17854017968201297
+    },
+    {
+      "index": "security_app",
+      "users": 30044.0,
+      "control": 0.17558472712734058,
+      "treatment": 0.1951852098157877,
+      "rel_lift": 0.11162976990722062,
+      "rel_ci_low": 0.05476221581633545,
+      "rel_ci_high": 0.17156334083089209,
+      "p_value": 7.766627932790565e-05
+    }
+  ],
+  "decision": "ship"
+}

@@ -1,0 +1,4 @@
+data/*.duckdb
+data/*.duckdb.wal
+__pycache__/
+.ipynb_checkpoints/
